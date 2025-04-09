@@ -1,11 +1,11 @@
 ### POST request to create add patients
-POST http://localhost:8081/patients
+POST http://localhost:8080/patients
 Content-Type: application/json
 
 {
-  "name": "douglas nyabasa",
-  "email": "douglas400@gmail.com",
-  "address": "123 main street",
+  "name": "douglas king",
+  "email": "douglas40@gmail.com",
+  "address": "123mainstreet",
   "getDateOfBirth": "1999-01-01",
   "registeredDate": "2023-03-03"
 }

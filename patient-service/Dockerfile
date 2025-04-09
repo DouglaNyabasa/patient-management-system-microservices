@@ -1,21 +1,26 @@
-FROM maven:3.9.9-eclipse-temurin-21 AS builder
+# Use the official Maven image for building the application
+FROM maven:3.9.9-eclipse-temurin-21 AS build
 
+# Set the working directory
 WORKDIR /app
 
+# Copy the pom.xml and source code
 COPY pom.xml .
-
-RUN mvn dependency:go-offline -B
-
 COPY src ./src
 
+# Build the application
 RUN mvn clean package
 
-FROM openjdk:21-jdk AS runner
+# Use a lightweight JDK image for the final image
+FROM openjdk:21-jdk-slim
 
 WORKDIR /app
 
-COPY --from=builder /app/target/patient-service-0.0.1-SNAPSHOT.jar ./app.jar
+# Copy the built JAR file from the build stage
+COPY --from=build /app/target/patient-service-app.jar /app/patient-service-app.jar
 
-EXPOSE 8081
+# Expose the application port
+EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Command to run the application
+CMD ["java", "-jar", "patient-service-app.jar"]

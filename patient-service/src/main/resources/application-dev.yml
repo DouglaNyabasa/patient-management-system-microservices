@@ -1,0 +1,7 @@
+## Database
+#USERNAME: myuser
+#PASSWORD: secret
+#HOST: localhost # Update to your MySQL host
+#PORT: 3306 # Default MySQL port
+#DB: mydatabase
+#

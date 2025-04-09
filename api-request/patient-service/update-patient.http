@@ -1,5 +1,5 @@
 ### GET request to update patient
-PUT http://localhost:8081/patients/b4337629-4065-4ea9-8cdc-bd44c73caaba
+PUT http://localhost:8080/patients/ffc0a76a-0a12-4c18-aa58-5302c4e77f7f
 Content-Type: application/json
 
 {
