@@ -28,6 +28,8 @@ public class BillingServiceGrpcClient {
                 serverPort).usePlaintext().build();
 
         blockingStub = BillingServiceGrpc.newBlockingStub(channel);
+
+
     }
 
     public BillingResponse createBillingAccount(String patientId, String name,
