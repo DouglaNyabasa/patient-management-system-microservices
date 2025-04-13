@@ -1,6 +1,5 @@
 package com.pm.billingservice.grpc;
 
-
 import billing.BillingRequest;
 import billing.BillingResponse;
 import billing.BillingServiceGrpc.BillingServiceImplBase;
@@ -18,14 +17,10 @@ public class BillingGrpcService extends BillingServiceImplBase {
     @Override
     public void createBillingAccount(BillingRequest billingRequest,
                                      StreamObserver<BillingResponse> responseObserver) {
+
         log.info("createBillingAccount request received {}", billingRequest.toString());
 
-        if (billingRequest.getPatientId().isEmpty()) {
-            responseObserver.onError(new IllegalArgumentException("Patient ID is required"));
-            return;
-        }
-
-        // Business logic - e.g save to database, perform calculations etc.
+        // Business logic - e.g save to database, perform calculates etc
 
         BillingResponse response = BillingResponse.newBuilder()
                 .setAccountId("12345")
@@ -35,5 +30,4 @@ public class BillingGrpcService extends BillingServiceImplBase {
         responseObserver.onNext(response);
         responseObserver.onCompleted();
     }
-
 }

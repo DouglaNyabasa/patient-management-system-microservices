@@ -1,25 +1,10 @@
-spring.application.name=billing-service
+spring:
+  application:
+    name: billing-service
 
-server.port=4001
-grpc.server.port=9001
+server:
+  port: 4002  # Change this to an available port
 
-
-#spring.datasource.url=jdbc:mysql://localhost:3306/patientdb?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-#spring.datasource.username=root
-#spring.datasource.password=your_new_password
-#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
-#
-## JPA/Hibernate Configuration
-#spring.jpa.hibernate.ddl-auto=update
-#spring.jpa.show-sql=true
-#
-#
-#logging.level.root=info
-#
-## Connection Pool Configuration (optional)
-#spring.datasource.hikari.maximum-pool-size=10
-#spring.datasource.hikari.minimum-idle=2
-#spring.datasource.hikari.idle-timeout=30000
-#spring.datasource.hikari.connection-timeout=30000
-#
-# Enable SQL initialization
+grpc:
+  server:
+    port: 9001
