@@ -3,14 +3,19 @@ spring:
     name: patient-service
   datasource:
     url: jdbc:postgresql://localhost:5432/patientserviceDB
-    username: admin_user
+    username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  kafka:
+    bootstrap-servers: localhost:9092  # Add your Kafka bootstrap server here
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
 
 server:
   port: 4000
@@ -18,4 +23,4 @@ server:
 grpc:
   client:
     billing-service:
-      address: static://localhost:9001
+      address: static://localhost:9001  # Updated to use service name

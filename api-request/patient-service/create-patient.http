@@ -1,10 +1,10 @@
 ### POST request to create add patients
-POST http://localhost:8080/patients
+POST http://localhost:4000/patients
 Content-Type: application/json
 
 {
-  "name": "douglas king",
-  "email": "douglas40@gmail.com",
+  "name": "douglas kafka",
+  "email": "douglas4002@gmail.com",
   "address": "123mainstreet",
   "getDateOfBirth": "1999-01-01",
   "registeredDate": "2023-03-03"
