@@ -26,7 +26,7 @@ public class KafkaProducer {
         try{
           kafkaTemplate.send("patient", event.toByteArray());
         } catch (Exception e) {
-            log.error("Error sending event to Kafka topic: {}", event);
+            log.error("Error sending event to Kafka topic: {}", e.getMessage());
         }
 
     }
