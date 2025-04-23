@@ -14,18 +14,13 @@ services:
   auth_service:
     build: .
     image: auth_service_img
-    container_name: auth_service_con
+    container_name: auth_service
     environment:
-      db-url: jdbc:postgresql://auth_service_db:5432/authServiceDb
-      db-username: postgres
-      db-password: password
+      DATABASE_URL: jdbc:postgresql://auth_service_db:5432/authServiceDb
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: password
+      JWT_SECRET: myveryprivate64bitsecretmyveryprivate64bitsecretmyveryprivate64bitsecret
     ports:
       - "8081:8081"
     depends_on:
       - auth_service_db
-
-#    restart: always
-
-
-
-
