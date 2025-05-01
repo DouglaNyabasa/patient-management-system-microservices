@@ -33,7 +33,7 @@ ARG JAR_FILE=target/*.jar
 COPY ./target/patient-service-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the application port and gRPC port
-EXPOSE 8080
+EXPOSE 8082
 EXPOSE 9090  # Expose gRPC port
 
 # Command to run the application
