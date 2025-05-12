@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  api_gateway:
+    build: .
+    image: api_gateway_img
+    container_name: api_gateway
+    volumes:
+      - /media/modestnerds/Doug/docker-volumes/patient-service:/var/lib/api_gateway
+    ports:
+      - "4004:4004"
+    networks:
+      - internal-network
+
+networks:
+  internal-network:
+    driver: bridge

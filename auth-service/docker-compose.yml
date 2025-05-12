@@ -10,17 +10,25 @@ services:
       POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
+    volumes:
+      - /media/modestnerds/Doug/docker-volumes/auth_service_db:/var/lib/postgres
+    networks:
+      - internal-network
 
   auth_service:
     build: .
     image: auth_service_img
     container_name: auth_service
+    volumes:
+      - /media/modestnerds/Doug/docker-volumes/patient-service:/var/lib/auth_service
     environment:
       DATABASE_URL: jdbc:postgresql://auth_service_db:5432/authServiceDb
       DATABASE_USERNAME: postgres
       DATABASE_PASSWORD: password
       JWT_SECRET: myveryprivate64bitsecretmyveryprivate64bitsecretmyveryprivate64bitsecret
-    ports:
-      - "8081:8081"
-    depends_on:
-      - auth_service_db
+    networks:
+      - internal-network
+
+networks:
+  internal-network:
+    driver: bridge

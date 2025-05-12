@@ -8,10 +8,11 @@ services:
       - "8080:8080"
       - "9001:9001"
     networks:
-      - internal
+      - internal-network
 
 networks:
-  internal:
+  internal-network:
+    driver: bridge
 
 
 

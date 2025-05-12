@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  analytics_service:
+    build: .
+    image: analytics_service_img
+    container_name: analytics_service
+    volumes:
+      - /media/modestnerds/Doug/docker-volumes/patient-service:/var/lib/analytics_service
+    ports:
+      - "8081:8081"
+    networks:
+      - internal-network
+
+networks:
+  internal-network:
+    driver: bridge

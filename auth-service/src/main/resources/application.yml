@@ -1,17 +1,4 @@
-#spring:
-#  application:
-#    name: patient-service
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/authServiceDb
-#    username: postgres
-#    password: password
-#    driver-class-name: org.postgresql.Driver
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    show-sql: true
-#  jwt:
-#    secret: ${JWT_SECRET}
+
 
 spring:
   application:
@@ -28,4 +15,4 @@ spring:
   jwt:
     secret: ${JWT_SECRET}
 server:
-  port: 8081
+  port: 8005
