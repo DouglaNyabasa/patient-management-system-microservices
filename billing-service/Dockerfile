@@ -21,7 +21,7 @@
 #
 #ENTRYPOINT ["java", "-jar", "app.jar"]
 
-FROM openjdk:21-jdk-slim AS runner
+FROM openjdk:21-jdk-slim
 
 ARG JAR_FILE=target/*.jar
 

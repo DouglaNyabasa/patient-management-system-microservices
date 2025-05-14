@@ -7,16 +7,17 @@ spring:
       routes:
             # Route for /api/patients/** to patient-service
         - id: patient-service-route
-          uri: http://localhost:4008
+          uri: http://localhost:8082
           predicates:
             - Path=/api/patients/**
           filters:
             - StripPrefix=1
+            - JwtValidation
 
 
         # Route for /api/docs/patients to patient-service /v3/api-docs
         - id: api-docs-patient-route
-          uri: http://localhost:4008
+          uri: http://localhost:8082
           predicates:
             - Path=/api-docs/patients
           filters:

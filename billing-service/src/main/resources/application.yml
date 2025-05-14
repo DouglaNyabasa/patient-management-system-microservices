@@ -3,7 +3,7 @@ spring:
     name: billing-service
 
 server:
-  port: 4003  # Change this to an available port
+  port: 8080  # Change this to an available port
 
 grpc:
   server:

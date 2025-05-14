@@ -1,18 +1,14 @@
-version: '3.8'
-
 services:
   billing-service:
+    build: .
     image: billing-service:latest
     container_name: billing-service
     ports:
       - "8080:8080"
-      - "9001:9001"
+      - "9001:9001"  # Expose gRPC port
     networks:
       - internal-network
 
 networks:
   internal-network:
     driver: bridge
-
-
-
